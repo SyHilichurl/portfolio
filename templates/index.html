@@ -3,401 +3,634 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shiyi(Liz) Chen - Software Developer</title>
+    <title>Shiyi(Liz) Chen · Portfolio</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-    <nav>
-        <div class="nav-content">
-            <div class="logo">Shiyi(Liz) Chen</div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Hi, I'm <span class="highlight">Shiyi(Liz) Chen</span></h1>
-            <h2>Software Developer</h2>
-            <p>Building innovative solutions with code</p>
-            <div class="cta-buttons">
-                <a href="#projects" class="btn primary">View My Work</a>
-                <a href="#contact" class="btn secondary">Contact Me</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="about" class="about">
-        <h2>About Me</h2>
-        <div class="about-content">
-            <div class="about-text">
-                <p>I'm a passionate Software Developer with expertise in building scalable applications and solving complex problems. I love creating efficient, user-friendly solutions that make a difference.</p>
-                <div class="skills">
-                    <h3>Skills</h3>
-                    <div class="skill-categories">
-                        <div class="skill-category">
-                            <h4>Backend Development</h4>
-                            <div class="skill-tags">
-                                <span>Node.js</span>
-                                <span>Express</span>
-                                <span>TypeScript</span>
-                                <span>Python</span>
-                                <span>MongoDB</span>
-                                <span>SQL</span>
-                                <span>RESTful APIs</span>
-                                <span>WebSocket</span>
-                            </div>
-                        </div>
-                        <div class="skill-category">
-                            <h4>Frontend Development</h4>
-                            <div class="skill-tags">
-                                <span>React</span>
-                                <span>TypeScript</span>
-                                <span>HTML5</span>
-                                <span>CSS3</span>
-                                <span>JavaScript</span>
-                                <span>Responsive Design</span>
-                            </div>
-                        </div>
-                        <div class="skill-category">
-                            <h4>Cloud & DevOps</h4>
-                            <div class="skill-tags">
-                                <span>AWS</span>
-                                <span>Firebase</span>
-                                <span>Docker</span>
-                                <span>Git</span>
-                                <span>CI/CD</span>
-                                <span>Linux</span>
-                            </div>
-                        </div>
-                        <div class="skill-category">
-                            <h4>Data & Analytics</h4>
-                            <div class="skill-tags">
-                                <span>Data Analysis</span>
-                                <span>Machine Learning</span>
-                                <span>XGBoost</span>
-                                <span>Tableau</span>
-                                <span>R</span>
-                                <span>Pandas</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="projects" class="projects">
-        <h2>Featured Projects</h2>
-        <div class="project-grid">
-            <div class="project-card" data-project-id="backend-dev">
-                <div class="project-image" style="background: linear-gradient(135deg, #0ea5e9 0%, #0369a1 100%);">
-                    <div class="project-overlay">
-                        <img src="{{ url_for('static', filename='images/1.jpg') }}" alt="System Architecture" style="width: 100%; height: 100%; object-fit: cover;">
-                    </div>
-                </div>
-                <h3>Content Platform Backend</h3>
-                <p>Scalable backend system with real-time features and AWS integration</p>
-                <div class="project-links">
-                    <a href="#" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i></a>
-                </div>
-            </div>
-            <div class="project-card" data-project-id="data-analysis">
-                <div class="project-image" style="background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);">
-                    <div class="project-overlay">
-                        <img src="{{ url_for('static', filename='images/2.jpg') }}" alt="Data Analysis Framework" style="width: 100%; height: 100%; object-fit: cover;">
-                    </div>
-                </div>
-                <h3>Data Analysis & Business Impact Study</h3>
-                <p>Analyzed 72 companies' data to improve business performance</p>
-                <div class="project-links">
-                    <a href="#" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i></a>
-                </div>
-            </div>
-            <div class="project-card" data-project-id="chess-app">
-                <div class="project-image" style="background: linear-gradient(135deg, #4f46e5 0%, #3730a3 100%);">
-                    <div class="project-overlay">
-                        <img src="{{ url_for('static', filename='images/3.png') }}" alt="User Engagement" style="width: 100%; height: 100%; object-fit: cover;">
-                    </div>
-                </div>
-                <h3>MERN Chess Application</h3>
-                <p>Full-stack chess platform with real-time gameplay and chat</p>
-                <div class="project-links">
-                    <a href="#" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i></a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Project Details Modal -->
-        <div id="project-modal" class="modal">
-            <div class="modal-content">
-                <span class="close-modal">&times;</span>
-                <div id="backend-dev" class="project-details-content">
-                    <div class="project-header">
-                        <h3>Content Platform Backend</h3>
-                        <p class="experience-subtitle">AI Startup | Remote</p>
-                        <div class="project-metrics">
-                            <div class="metric">
-                                <span class="metric-value">6+</span>
-                                <span class="metric-label">Services</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-value">AWS</span>
-                                <span class="metric-label">Cloud</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-value">Real-time</span>
-                                <span class="metric-label">WebSocket</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-value">Secure</span>
-                                <span class="metric-label">Payments</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="detail-section">
-                        <h4>Key Achievements</h4>
-                        <ul class="achievement-list">
-                            <li>
-                                <i class="fas fa-code"></i>
-                                <span>Built Node.js/TypeScript backend with MongoDB and WebSocket support</span>
-                            </li>
-                            <li>
-                                <i class="fab fa-aws"></i>
-                                <span>Integrated AWS S3 for media storage and AWS Personalize for recommendations</span>
-                            </li>
-                            <li>
-                                <i class="fas fa-bell"></i>
-                                <span>Implemented Firebase Cloud Messaging for push notifications</span>
-                            </li>
-                            <li>
-                                <i class="fas fa-credit-card"></i>
-                                <span>Integrated Stripe for payment processing with webhook support</span>
-                            </li>
-                            <li>
-                                <i class="fas fa-sms"></i>
-                                <span>Added Twilio integration for SMS functionality</span>
-                            </li>
-                            <li>
-                                <i class="fas fa-tachometer-alt"></i>
-                                <span>Optimized static asset delivery using CDN and separated storage</span>
-                            </li>
-                        </ul>
-                    </div>
-                    
-                    <div class="tech-stack">
-                        <span class="tech-tag">Node.js</span>
-                        <span class="tech-tag">TypeScript</span>
-                        <span class="tech-tag">MongoDB</span>
-                        <span class="tech-tag">AWS</span>
-                        <span class="tech-tag">Firebase</span>
-                        <span class="tech-tag">Stripe</span>
-                        <span class="tech-tag">Twilio</span>
-                        <span class="tech-tag">WebSocket</span>
-                    </div>
-                </div>
-
-                <div id="data-analysis" class="project-details-content">
-                    <div class="project-header">
-                        <h3>Data Analysis & Business Impact Study</h3>
-                        <p class="experience-subtitle">Large Consulting Firm | New Zealand</p>
-                        <div class="project-metrics">
-                            <div class="metric">
-                                <span class="metric-value">72</span>
-                                <span class="metric-label">Companies Analyzed</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-value">87%</span>
-                                <span class="metric-label">Model Accuracy</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-value">12</span>
-                                <span class="metric-label">Key Insights</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-value">2%</span>
-                                <span class="metric-label">KPI Increase</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="detail-section">
-                        <h4>Key Achievements</h4>
-                        <ul class="achievement-list">
-                            <li>
-                                <i class="fas fa-database"></i>
-                                <span>Analyzed datasets from 72 local companies using SQL and Python</span>
-                            </li>
-                            <li>
-                                <i class="fas fa-lightbulb"></i>
-                                <span>Derived 12 optimization insights based on data management framework</span>
-                            </li>
-                            <li>
-                                <i class="fas fa-brain"></i>
-                                <span>Built XGBoost model with 87% accuracy in predicting efficiency</span>
-                            </li>
-                            <li>
-                                <i class="fas fa-flask"></i>
-                                <span>Designed A/B testing frameworks leading to 2% KPI increase</span>
-                            </li>
-                            <li>
-                                <i class="fas fa-chart-bar"></i>
-                                <span>Developed interactive Tableau dashboards for executive teams</span>
-                            </li>
-                        </ul>
-                    </div>
-                    
-                    <div class="tech-stack">
-                        <span class="tech-tag">SQL</span>
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">XGBoost</span>
-                        <span class="tech-tag">R</span>
-                        <span class="tech-tag">Tableau</span>
-                    </div>
-                </div>
-
-                <div id="chess-app" class="project-details-content">
-                    <div class="project-header">
-                        <h3>MERN Chess Application</h3>
-                        <p class="experience-subtitle">Mid-sized Tech Company | China</p>
-                        <div class="project-metrics">
-                            <div class="metric">
-                                <span class="metric-value">100%</span>
-                                <span class="metric-label">Real-time</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-value">3</span>
-                                <span class="metric-label">Core Features</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-value">MERN</span>
-                                <span class="metric-label">Stack</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-value">JWT</span>
-                                <span class="metric-label">Security</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="detail-section">
-                        <h4>Key Achievements</h4>
-                        <ul class="achievement-list">
-                            <li>
-                                <i class="fas fa-server"></i>
-                                <span>Developed backend with Node.js and Express, implementing RESTful APIs</span>
-                            </li>
-                            <li>
-                                <i class="fas fa-shield-alt"></i>
-                                <span>Implemented secure authentication using JWT and bcrypt</span>
-                            </li>
-                            <li>
-                                <i class="fas fa-database"></i>
-                                <span>Designed MongoDB schemas for user, game, and chat data</span>
-                            </li>
-                            <li>
-                                <i class="fas fa-code"></i>
-                                <span>Built responsive React + TypeScript frontend with real-time features</span>
-                            </li>
-                            <li>
-                                <i class="fas fa-plug"></i>
-                                <span>Integrated Socket.IO for real-time gameplay and chat functionality</span>
-                            </li>
-                        </ul>
-                    </div>
-                    
-                    <div class="tech-stack">
-                        <span class="tech-tag">Node.js</span>
-                        <span class="tech-tag">Express</span>
-                        <span class="tech-tag">React</span>
-                        <span class="tech-tag">TypeScript</span>
-                        <span class="tech-tag">MongoDB</span>
-                        <span class="tech-tag">Socket.IO</span>
-                        <span class="tech-tag">JWT</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="contact">
-        <h2>Get In Touch</h2>
-        <div class="contact-content">
-            <div class="contact-info">
-                <a href="mailto:sche753@uw.edu" class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <span>sche753@uw.edu</span>
-                </a>
-                <a href="https://github.com/SyHilichurl" target="_blank" class="contact-item">
+    <!-- GitHub-style Header -->
+    <header class="github-header">
+        <div class="header-container">
+            <div class="header-left">
+                <div class="github-logo">
                     <i class="fab fa-github"></i>
-                    <span>GitHub</span>
-                </a>
-                <a href="https://www.linkedin.com/in/syhilichurl/" target="_blank" class="contact-item">
-                    <i class="fab fa-linkedin"></i>
-                    <span>LinkedIn</span>
-                </a>
+                </div>
+                <nav class="header-nav">
+                    <a href="#dashboard" class="nav-link active" data-section="dashboard">
+                        <i class="fas fa-home"></i>
+                        <span>Dashboard</span>
+                    </a>
+                    <a href="#projects" class="nav-link" data-section="projects">
+                        <i class="fas fa-project-diagram"></i>
+                        <span>Projects</span>
+                    </a>
+                </nav>
+            </div>
+            <div class="header-right">
+                <button class="header-btn" title="Notifications">
+                    <i class="far fa-bell"></i>
+                </button>
+                <div class="user-menu">
+                    <div class="user-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                </div>
             </div>
         </div>
-    </section>
+    </header>
 
-    <footer>
-        <p>&copy; 2025 Shiyi(Liz) Chen. All rights reserved.</p>
-    </footer>
+    <!-- Main Container -->
+    <div class="github-container">
+        <!-- Sidebar -->
+        <aside class="github-sidebar">
+            <div class="profile-card">
+                <div class="profile-avatar-large">
+                    <i class="fas fa-user"></i>
+                </div>
+                <h2 class="profile-name">Shiyi(Liz) Chen</h2>
+                <p class="profile-username">@syhilichurl</p>
+                <p class="profile-bio">Software Developer · Building innovative solutions with code</p>
+                <div class="profile-stats">
+                    <div class="stat-item">
+                        <i class="fas fa-code-branch"></i>
+                        <span><strong>3</strong> projects</span>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-star"></i>
+                        <span><strong>15+</strong> technologies</span>
+                    </div>
+                </div>
+                <div class="profile-links">
+                    <a href="mailto:sche753@uw.edu" class="profile-link">
+                        <i class="fas fa-envelope"></i> sche753@uw.edu
+                    </a>
+                    <a href="https://github.com/SyHilichurl" target="_blank" class="profile-link">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                    <a href="https://www.linkedin.com/in/syhilichurl/" target="_blank" class="profile-link">
+                        <i class="fab fa-linkedin"></i> LinkedIn
+                    </a>
+                </div>
+            </div>
 
-    <!-- Back to Top Button -->
-    <button id="back-to-top" class="back-to-top">
-        <i class="fas fa-arrow-up"></i>
-    </button>
+            <!-- Skills Section in Sidebar -->
+            <div class="sidebar-skills">
+                <div class="sidebar-section-header">
+                    <h3>Skills & Technologies</h3>
+                </div>
+                <div class="sidebar-skill-category">
+                    <div class="sidebar-skill-header">
+                        <i class="fas fa-server"></i>
+                        <span>Backend</span>
+                    </div>
+                    <div class="sidebar-skill-tags">
+                        <span class="sidebar-skill-tag">Node.js</span>
+                        <span class="sidebar-skill-tag">TypeScript</span>
+                        <span class="sidebar-skill-tag">Python</span>
+                        <span class="sidebar-skill-tag">MongoDB</span>
+                    </div>
+                </div>
+                <div class="sidebar-skill-category">
+                    <div class="sidebar-skill-header">
+                        <i class="fas fa-paint-brush"></i>
+                        <span>Frontend</span>
+                    </div>
+                    <div class="sidebar-skill-tags">
+                        <span class="sidebar-skill-tag">React</span>
+                        <span class="sidebar-skill-tag">TypeScript</span>
+                        <span class="sidebar-skill-tag">JavaScript</span>
+                    </div>
+                </div>
+                <div class="sidebar-skill-category">
+                    <div class="sidebar-skill-header">
+                        <i class="fas fa-cloud"></i>
+                        <span>Cloud & DevOps</span>
+                    </div>
+                    <div class="sidebar-skill-tags">
+                        <span class="sidebar-skill-tag">AWS</span>
+                        <span class="sidebar-skill-tag">Docker</span>
+                        <span class="sidebar-skill-tag">Git</span>
+                    </div>
+                </div>
+                <div class="sidebar-skill-category">
+                    <div class="sidebar-skill-header">
+                        <i class="fas fa-chart-bar"></i>
+                        <span>Data & Analytics</span>
+                    </div>
+                    <div class="sidebar-skill-tags">
+                        <span class="sidebar-skill-tag">Python</span>
+                        <span class="sidebar-skill-tag">XGBoost</span>
+                        <span class="sidebar-skill-tag">Tableau</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="github-main">
+            <!-- Dashboard Section -->
+            <section id="dashboard" class="github-section active">
+                <div class="section-header">
+                    <h1>Portfolio Overview</h1>
+                </div>
+
+                <!-- Portfolio Stats -->
+                <div class="portfolio-stats-grid">
+                    <div class="portfolio-stat-card">
+                        <div class="stat-icon-wrapper">
+                            <i class="fas fa-project-diagram"></i>
+                        </div>
+                        <div class="stat-info">
+                            <div class="stat-number">3</div>
+                            <div class="stat-text">Active Projects</div>
+                        </div>
+                    </div>
+                    <div class="portfolio-stat-card">
+                        <div class="stat-icon-wrapper">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div class="stat-info">
+                            <div class="stat-number">15+</div>
+                            <div class="stat-text">Technologies</div>
+                        </div>
+                    </div>
+                    <div class="portfolio-stat-card">
+                        <div class="stat-icon-wrapper">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="stat-info">
+                            <div class="stat-number">87%</div>
+                            <div class="stat-text">Model Accuracy</div>
+                        </div>
+                    </div>
+                    <div class="portfolio-stat-card">
+                        <div class="stat-icon-wrapper">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <div class="stat-info">
+                            <div class="stat-number">72</div>
+                            <div class="stat-text">Companies Analyzed</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- About Section -->
+                <div class="dashboard-about-card">
+                    <div class="card-header">
+                        <h2><i class="fas fa-user"></i> About</h2>
+                    </div>
+                    <div class="card-content">
+                        <p>I'm a passionate Software Developer with expertise in building scalable applications and solving complex problems. I love creating efficient, user-friendly solutions that make a difference.</p>
+                        <div class="about-highlights">
+                            <div class="highlight-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Full-stack development expertise</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Cloud architecture & AWS integration</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Data analysis & machine learning</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Real-time applications with WebSocket</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Highlights -->
+                <div class="project-highlights">
+                    <div class="section-header">
+                        <h2>Featured Projects</h2>
+                    </div>
+                    <div class="highlights-grid">
+                        <div class="highlight-card" data-project-id="backend-dev">
+                            <div class="highlight-badge backend">
+                                <i class="fas fa-server"></i>
+                            </div>
+                            <h3>Content Platform Backend</h3>
+                            <p>Scalable backend with AWS integration and real-time features</p>
+                            <div class="highlight-metrics">
+                                <span class="highlight-metric">
+                                    <i class="fas fa-layer-group"></i> 6+ Services
+                                </span>
+                                <span class="highlight-metric">
+                                    <i class="fab fa-aws"></i> AWS Cloud
+                                </span>
+                            </div>
+                        </div>
+                        <div class="highlight-card" data-project-id="data-analysis">
+                            <div class="highlight-badge data">
+                                <i class="fas fa-chart-bar"></i>
+                            </div>
+                            <h3>Data Analysis Study</h3>
+                            <p>72 companies analyzed with 87% model accuracy</p>
+                            <div class="highlight-metrics">
+                                <span class="highlight-metric">
+                                    <i class="fas fa-building"></i> 72 Companies
+                                </span>
+                                <span class="highlight-metric">
+                                    <i class="fas fa-bullseye"></i> 87% Accuracy
+                                </span>
+                            </div>
+                        </div>
+                        <div class="highlight-card" data-project-id="chess-app">
+                            <div class="highlight-badge fullstack">
+                                <i class="fas fa-chess"></i>
+                            </div>
+                            <h3>MERN Chess App</h3>
+                            <p>Real-time multiplayer chess with Socket.IO</p>
+                            <div class="highlight-metrics">
+                                <span class="highlight-metric">
+                                    <i class="fas fa-bolt"></i> Real-time
+                                </span>
+                                <span class="highlight-metric">
+                                    <i class="fas fa-users"></i> Multiplayer
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Activity Timeline -->
+                <div class="activity-timeline">
+                    <div class="section-header">
+                        <h2>Recent Activity</h2>
+                    </div>
+                    <div class="timeline-items">
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <strong>Content Platform Backend</strong>
+                                    <span class="timeline-time">2 days ago</span>
+                                </div>
+                                <p>Built scalable backend with AWS integration and WebSocket support</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <strong>Data Analysis Study</strong>
+                                    <span class="timeline-time">1 week ago</span>
+                                </div>
+                                <p>Completed analysis of 72 companies with 87% model accuracy</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <strong>MERN Chess Application</strong>
+                                    <span class="timeline-time">2 weeks ago</span>
+                                </div>
+                                <p>Implemented real-time gameplay and chat functionality</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Projects Section -->
+            <section id="projects" class="github-section">
+                <div class="section-header">
+                    <h1>Projects</h1>
+                </div>
+
+                <div class="project-details-grid">
+                    <div class="project-detail-card" data-project-id="backend-dev">
+                        <div class="project-image-wrapper">
+                            <img src="{{ url_for('static', filename='images/1.jpg') }}" alt="Content Platform Backend">
+                        </div>
+                        <div class="project-detail-content">
+                            <div class="project-badge-header">
+                                <span class="project-badge">Backend</span>
+                                <span class="project-badge">AWS</span>
+                                <span class="project-badge">Real-time</span>
+                            </div>
+                            <h2>Content Platform Backend</h2>
+                            <p class="project-subtitle">AI Startup | Remote</p>
+                            <p class="project-description">Scalable backend system with real-time features and AWS integration. Built with Node.js/TypeScript, MongoDB, and WebSocket support.</p>
+                            <div class="project-features">
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>6+ microservices</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>AWS S3 & Personalize</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Stripe payments</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Firebase notifications</span>
+                                </div>
+                            </div>
+                            <div class="project-tech">
+                                <span class="tech-badge">Node.js</span>
+                                <span class="tech-badge">TypeScript</span>
+                                <span class="tech-badge">MongoDB</span>
+                                <span class="tech-badge">AWS</span>
+                                <span class="tech-badge">WebSocket</span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="#" class="github-btn">
+                                    <i class="fab fa-github"></i> View on GitHub
+                                </a>
+                                <a href="#" class="github-btn secondary">
+                                    <i class="fas fa-external-link-alt"></i> Live Demo
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-detail-card" data-project-id="data-analysis">
+                        <div class="project-image-wrapper">
+                            <img src="{{ url_for('static', filename='images/2.jpg') }}" alt="Data Analysis Study">
+                        </div>
+                        <div class="project-detail-content">
+                            <div class="project-badge-header">
+                                <span class="project-badge">Data Science</span>
+                                <span class="project-badge">ML</span>
+                                <span class="project-badge">Analytics</span>
+                            </div>
+                            <h2>Data Analysis & Business Impact Study</h2>
+                            <p class="project-subtitle">Large Consulting Firm | New Zealand</p>
+                            <p class="project-description">Analyzed datasets from 72 local companies using SQL and Python. Built XGBoost model with 87% accuracy and developed interactive Tableau dashboards.</p>
+                            <div class="project-features">
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>72 companies analyzed</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>87% model accuracy</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>12 key insights</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>2% KPI increase</span>
+                                </div>
+                            </div>
+                            <div class="project-tech">
+                                <span class="tech-badge">Python</span>
+                                <span class="tech-badge">XGBoost</span>
+                                <span class="tech-badge">SQL</span>
+                                <span class="tech-badge">Tableau</span>
+                                <span class="tech-badge">R</span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="#" class="github-btn">
+                                    <i class="fab fa-github"></i> View on GitHub
+                                </a>
+                                <a href="/data-analysis" class="github-btn secondary">
+                                    <i class="fas fa-external-link-alt"></i> View Details
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-detail-card" data-project-id="chess-app">
+                        <div class="project-image-wrapper">
+                            <img src="{{ url_for('static', filename='images/3.png') }}" alt="MERN Chess App">
+                        </div>
+                        <div class="project-detail-content">
+                            <div class="project-badge-header">
+                                <span class="project-badge">Full Stack</span>
+                                <span class="project-badge">Real-time</span>
+                                <span class="project-badge">MERN</span>
+                            </div>
+                            <h2>MERN Chess Application</h2>
+                            <p class="project-subtitle">Mid-sized Tech Company | China</p>
+                            <p class="project-description">Full-stack chess platform with real-time gameplay and chat. Built with React, Node.js, Express, MongoDB, and Socket.IO for seamless multiplayer experience.</p>
+                            <div class="project-features">
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Real-time gameplay</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>JWT authentication</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Live chat system</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>MongoDB schemas</span>
+                                </div>
+                            </div>
+                            <div class="project-tech">
+                                <span class="tech-badge">React</span>
+                                <span class="tech-badge">Node.js</span>
+                                <span class="tech-badge">Express</span>
+                                <span class="tech-badge">MongoDB</span>
+                                <span class="tech-badge">Socket.IO</span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="#" class="github-btn">
+                                    <i class="fab fa-github"></i> View on GitHub
+                                </a>
+                                <a href="#" class="github-btn secondary">
+                                    <i class="fas fa-external-link-alt"></i> Live Demo
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Project Details Modal -->
+    <div id="project-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div id="backend-dev" class="project-details-content">
+                <div class="project-header">
+                    <h3>Content Platform Backend</h3>
+                    <p class="experience-subtitle">AI Startup | Remote</p>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <span class="metric-value">6+</span>
+                            <span class="metric-label">Services</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">AWS</span>
+                            <span class="metric-label">Cloud</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">Real-time</span>
+                            <span class="metric-label">WebSocket</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">Secure</span>
+                            <span class="metric-label">Payments</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="detail-section">
+                    <h4>Key Achievements</h4>
+                    <ul class="achievement-list">
+                        <li><i class="fas fa-code"></i><span>Built Node.js/TypeScript backend with MongoDB and WebSocket support</span></li>
+                        <li><i class="fab fa-aws"></i><span>Integrated AWS S3 for media storage and AWS Personalize for recommendations</span></li>
+                        <li><i class="fas fa-bell"></i><span>Implemented Firebase Cloud Messaging for push notifications</span></li>
+                        <li><i class="fas fa-credit-card"></i><span>Integrated Stripe for payment processing with webhook support</span></li>
+                        <li><i class="fas fa-sms"></i><span>Added Twilio integration for SMS functionality</span></li>
+                        <li><i class="fas fa-tachometer-alt"></i><span>Optimized static asset delivery using CDN and separated storage</span></li>
+                    </ul>
+                </div>
+                <div class="tech-stack">
+                    <span class="tech-tag">Node.js</span>
+                    <span class="tech-tag">TypeScript</span>
+                    <span class="tech-tag">MongoDB</span>
+                    <span class="tech-tag">AWS</span>
+                    <span class="tech-tag">Firebase</span>
+                    <span class="tech-tag">Stripe</span>
+                    <span class="tech-tag">Twilio</span>
+                    <span class="tech-tag">WebSocket</span>
+                </div>
+            </div>
+            <div id="data-analysis" class="project-details-content">
+                <div class="project-header">
+                    <h3>Data Analysis & Business Impact Study</h3>
+                    <p class="experience-subtitle">Large Consulting Firm | New Zealand</p>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <span class="metric-value">72</span>
+                            <span class="metric-label">Companies Analyzed</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">87%</span>
+                            <span class="metric-label">Model Accuracy</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">12</span>
+                            <span class="metric-label">Key Insights</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">2%</span>
+                            <span class="metric-label">KPI Increase</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="detail-section">
+                    <h4>Key Achievements</h4>
+                    <ul class="achievement-list">
+                        <li><i class="fas fa-database"></i><span>Analyzed datasets from 72 local companies using SQL and Python</span></li>
+                        <li><i class="fas fa-lightbulb"></i><span>Derived 12 optimization insights based on data management framework</span></li>
+                        <li><i class="fas fa-brain"></i><span>Built XGBoost model with 87% accuracy in predicting efficiency</span></li>
+                        <li><i class="fas fa-flask"></i><span>Designed A/B testing frameworks leading to 2% KPI increase</span></li>
+                        <li><i class="fas fa-chart-bar"></i><span>Developed interactive Tableau dashboards for executive teams</span></li>
+                    </ul>
+                </div>
+                <div class="tech-stack">
+                    <span class="tech-tag">SQL</span>
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">XGBoost</span>
+                    <span class="tech-tag">R</span>
+                    <span class="tech-tag">Tableau</span>
+                </div>
+            </div>
+            <div id="chess-app" class="project-details-content">
+                <div class="project-header">
+                    <h3>MERN Chess Application</h3>
+                    <p class="experience-subtitle">Mid-sized Tech Company | China</p>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <span class="metric-value">100%</span>
+                            <span class="metric-label">Real-time</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">3</span>
+                            <span class="metric-label">Core Features</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">MERN</span>
+                            <span class="metric-label">Stack</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">JWT</span>
+                            <span class="metric-label">Security</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="detail-section">
+                    <h4>Key Achievements</h4>
+                    <ul class="achievement-list">
+                        <li><i class="fas fa-server"></i><span>Developed backend with Node.js and Express, implementing RESTful APIs</span></li>
+                        <li><i class="fas fa-shield-alt"></i><span>Implemented secure authentication using JWT and bcrypt</span></li>
+                        <li><i class="fas fa-database"></i><span>Designed MongoDB schemas for user, game, and chat data</span></li>
+                        <li><i class="fas fa-code"></i><span>Built responsive React + TypeScript frontend with real-time features</span></li>
+                        <li><i class="fas fa-plug"></i><span>Integrated Socket.IO for real-time gameplay and chat functionality</span></li>
+                    </ul>
+                </div>
+                <div class="tech-stack">
+                    <span class="tech-tag">Node.js</span>
+                    <span class="tech-tag">Express</span>
+                    <span class="tech-tag">React</span>
+                    <span class="tech-tag">TypeScript</span>
+                    <span class="tech-tag">MongoDB</span>
+                    <span class="tech-tag">Socket.IO</span>
+                    <span class="tech-tag">JWT</span>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script>
-        // Modal functionality
-        const modal = document.getElementById('project-modal');
-        const closeBtn = document.getElementsByClassName('close-modal')[0];
-        const projectCards = document.querySelectorAll('.project-card');
-        const projectDetails = document.querySelectorAll('.project-details-content');
+        // Navigation
+        const navLinks = document.querySelectorAll('.nav-link');
+        const sections = document.querySelectorAll('.github-section');
 
-        // Back to Top Button functionality
-        const backToTopButton = document.getElementById('back-to-top');
-
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                backToTopButton.classList.add('show');
-            } else {
-                backToTopButton.classList.remove('show');
-            }
-        });
-
-        backToTopButton.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetSection = link.getAttribute('data-section');
+                
+                navLinks.forEach(nav => nav.classList.remove('active'));
+                link.classList.add('active');
+                
+                sections.forEach(section => {
+                    section.classList.remove('active');
+                    if (section.id === targetSection) {
+                        section.classList.add('active');
+                    }
+                });
             });
         });
 
+        // Modal functionality
+        const modal = document.getElementById('project-modal');
+        const closeBtn = document.getElementsByClassName('close-modal')[0];
+        const highlightCards = document.querySelectorAll('.highlight-card');
+        const projectCards = document.querySelectorAll('.project-detail-card');
+        const projectDetails = document.querySelectorAll('.project-details-content');
+
         function showProjectDetails(projectId) {
-            // Hide all project details first
             projectDetails.forEach(detail => {
                 detail.style.display = 'none';
             });
             
-            // Show only the selected project details
             const selectedProject = document.getElementById(projectId);
             if (selectedProject) {
                 selectedProject.style.display = 'grid';
             }
 
             modal.style.display = 'block';
-            // Trigger reflow
             modal.offsetHeight;
             modal.classList.add('show');
             document.body.style.overflow = 'hidden';
@@ -411,11 +644,9 @@
             }, 300);
         }
 
-        // Add click event listeners to project cards
-        projectCards.forEach(card => {
+        [...highlightCards, ...projectCards].forEach(card => {
             card.addEventListener('click', function(e) {
-                // Prevent click if clicking on project links
-                if (e.target.closest('.project-links')) {
+                if (e.target.closest('a') || e.target.closest('button')) {
                     return;
                 }
                 const projectId = this.getAttribute('data-project-id');
@@ -425,10 +656,7 @@
             });
         });
 
-        // Close modal when clicking the close button
         closeBtn.addEventListener('click', hideProjectDetails);
-
-        // Close modal when clicking outside
         modal.addEventListener('click', function(event) {
             if (event.target === modal) {
                 hideProjectDetails();
@@ -436,4 +664,4 @@
         });
     </script>
 </body>
-</html> 
+</html>
